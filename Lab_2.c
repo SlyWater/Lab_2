@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
-#define N 50000
+#define N 500000
 
 void shell(int* items, int count) {
 	int i, j, gap, k;
@@ -72,25 +72,30 @@ int main(void) {
 		i++;
 	}
 	fprintf(file, "Сортировка спиcка из %d элементов\n", N);
+	printf("Сортировка спиcка из %d элементов\n", N);
 	fprintf(file, ";Сортировка;Время, с\n");
 	fprintf(file, "Случайный набор\n");
+	printf("Случайный набор\n");
 	start = clock();
 	shell(a, N);
 	end = clock();
 	float spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Сортировка Шелла;%.3f\n", spent_time);
+	printf("Сортировка Шелла;%.3f\n", spent_time);
 
 	start = clock();
 	qs(b, 0, N - 1);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qs);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qs);%.3f\n", spent_time);
 
 	start = clock();
 	qsort(c, N, sizeof(int), compare);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qsort);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qsort);%.3f\n", spent_time);
 
 	i = 0;
 	while (i < N) {
@@ -100,11 +105,13 @@ int main(void) {
 		i++;
 	}
 	fprintf(file, "Возрастающий набор\n");
+	printf("Возрастающий набор\n");
 	start = clock();
 	shell(a, N);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Сортировка Шелла;%.3f\n", spent_time);
+	printf("Сортировка Шелла;%.3f\n", spent_time);
 
 
 
@@ -113,6 +120,7 @@ int main(void) {
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qs);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qs);%.3f\n", spent_time);
 
 
 	start = clock();
@@ -120,6 +128,7 @@ int main(void) {
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qsort);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qsort);%.3f\n", spent_time);
 
 
 	i = 0;
@@ -130,23 +139,27 @@ int main(void) {
 		i++;
 	}
 	fprintf(file, "Убывающий набор\n");
+	printf("Убывающий набор\n");
 	start = clock();
 	shell(a, N);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Сортировка Шелла;%.3f\n", spent_time);
+	printf("Сортировка Шелла;%.3f\n", spent_time);
 
 	start = clock();
 	qs(b, 0, N - 1);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qs);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qs);%.3f\n", spent_time);
 
 	start = clock();
 	qsort(c, N, sizeof(int), compare);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qsort);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qsort);%.3f\n", spent_time);
 
 	i = 0;
 	while (i < N) {
@@ -164,11 +177,13 @@ int main(void) {
 		i++;
 	}
 	fprintf(file, "Возрастающий до половины набор\n");
+	printf("Возрастающий до половины набор\n");
 	start = clock();
 	shell(a, N);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Сортировка Шелла;%.3f\n", spent_time);
+	printf("Сортировка Шелла;%.3f\n", spent_time);
 
 	//start = clock();
 	//qs(b, 0, N - 1);
@@ -177,12 +192,14 @@ int main(void) {
 	//spent_time = .0;
 	//fprintf(file, ";Быстрая сортировка (qs);%.3f\n", spent_time);
 	fprintf(file, ";Быстрая сортировка (qs);-\n");
+	printf("Быстрая сортировка (qs);-\n");
 
 	start = clock();
 	qsort(c, N, sizeof(int), compare);
 	end = clock();
 	spent_time = (float)(end - start) / CLOCKS_PER_SEC;
 	fprintf(file, ";Быстрая сортировка (qsort);%.3f\n", spent_time);
+	printf("Быстрая сортировка (qsort);%.3f\n", spent_time);
 
 
 	free(a);
